@@ -1,0 +1,110 @@
+[
+    {
+        "id": 1,
+        "player_img": "https://i.ibb.co.com/cX2N7RX5/shakib.jpg",
+        "player_name": "Shakib Al Hasan",
+        "player_country": "Bangladesh",
+        "playing_role": "All-rounder",
+        "rating": 4.8,
+        "price": 95000
+    },
+    {
+        "id": 2,
+        "player_img": "https://i.ibb.co.com/ymnn5RjY/tamim.webp",
+        "player_name": "Tamim Iqbal",
+        "player_country": "Bangladesh",
+        "playing_role": "Batsman",
+        "rating": 4.5,
+        "price": 88000
+    },
+    {
+        "id": 3,
+        "player_img": "https://i.ibb.co.com/LdmQjFZ9/Faf-du-Plessis.webp",
+        "player_name": "Faf du Plessis",
+        "player_country": "South Africa",
+        "playing_role": "Batsman",
+        "rating": 4.7,
+        "price": 92000
+    },
+    {
+        "id": 4,
+        "player_img": "https://i.ibb.co.com/5XzfWSKH/Rashid-Khan.webp",
+        "player_name": "Rashid Khan",
+        "player_country": "Afghanistan",
+        "playing_role": "Bowler",
+        "rating": 4.9,
+        "price": 99000
+    },
+    {
+        "id": 5,
+        "player_img": "https://i.ibb.co.com/8n01nJ7Z/Andre-russel.webp",
+        "player_name": "Andre Russell",
+        "player_country": "West Indies",
+        "playing_role": "All-rounder",
+        "rating": 4.6,
+        "price": 97000
+    },
+    {
+        "id": 6,
+        "player_img": "https://i.ibb.co.com/xPn7FRw/David-Miller.avif",
+        "player_name": "David Miller",
+        "player_country": "South Africa",
+        "playing_role": "Batsman",
+        "rating": 4.3,
+        "price": 87000
+    },
+    {
+        "id": 7,
+        "player_img": "https://i.ibb.co.com/ksHHRHQt/Mustafizur-Rahman.webp",
+        "player_name": "Mustafizur Rahman",
+        "player_country": "Bangladesh",
+        "playing_role": "Bowler",
+        "rating": 4.4,
+        "price": 85000
+    },
+    {
+        "id": 8,
+        "player_img": "https://i.ibb.co.com/rKF60xS2/Sunil-Narine.webp",
+        "player_name": "Sunil Narine",
+        "player_country": "West Indies",
+        "playing_role": "All-rounder",
+        "rating": 4.6,
+        "price": 91000
+    },
+    {
+        "id": 9,
+        "player_img": "https://i.ibb.co.com/0VZH0f25/Alex-Hales.webp",
+        "player_name": "Alex Hales",
+        "player_country": "England",
+        "playing_role": "Batsman",
+        "rating": 4.2,
+        "price": 83000
+    },
+    {
+        "id": 10,
+        "player_img": "https://i.ibb.co.com/HpgZQxWs/liton-das.jpg",
+        "player_name": "Litton Das",
+        "player_country": "Bangladesh",
+        "playing_role": "Wicketkeeper-Batsman",
+        "rating": 4.3,
+        "price": 84000
+    },
+    {
+        "id": 11,
+        "player_img": "https://i.ibb.co.com/kVnn2PXS/Sam-Curran.jpg",
+        "player_name": "Sam Curran",
+        "player_country": "England",
+        "playing_role": "All-rounder",
+        "rating": 4.7,
+        "price": 96000
+    },
+    {
+        "id": 12,
+        "player_img": "https://i.ibb.co.com/zWBTt3Mk/Quinton-de-Kock.jpg",
+        "player_name": "Quinton de Kock",
+        "player_country": "South Africa",
+        "playing_role": "Wicketkeeper-Batsman",
+        "rating": 4.6,
+        "price": 93000
+    }
+]
