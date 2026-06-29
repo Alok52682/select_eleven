@@ -15,16 +15,26 @@ const playersPromise = fetchPlayers()
 function App() {
   const [Available, setAvailable] = useState(true);
   const [abailableBalance, setAvailableBalance] = useState(6000000000);
+  const [selectedPlayers, setSelectedPlayers] = useState([]);
+
+  // console.log(selectedPlayers)
+
+  const removePlayer = (p) => {
+    const totalBal = abailableBalance + p.price;
+    const remainingPlayers = selectedPlayers.filter(ply => ply.id !== p.id)
+    setSelectedPlayers(remainingPlayers);
+    setAvailableBalance(totalBal)
+  }
 
 
   return (
     <>
       <Navbar abailableBalance={abailableBalance} />
       <div className='max-w-300 mx-auto flex justify-between items-center'>
-        <h1 className='font-bold'>{Available ? 'Available Players' : 'Selected Players'}</h1>
+        <h1 className='text-2xl font-bold'>{Available ? 'Available Players' : `Selected Players ${selectedPlayers.length}/6`}</h1>
         <div>
           <button onClick={() => setAvailable(true)} className={`py-3 px-4 border border-gray-400 rounded-l-xl md:w-30 border-r-0 ${Available && 'bg-amber-300'}`}>Available</button>
-          <button onClick={() => setAvailable(false)} className={`py-3 px-4 border border-gray-400 rounded-r-xl border-l-0 md:w-30 ${!Available && 'bg-amber-300'}`}>Selceted <span>{0}</span></button>
+          <button onClick={() => setAvailable(false)} className={`py-3 px-4 border border-gray-400 rounded-r-xl border-l-0 ${!Available && 'bg-amber-300'}`}>Selceted <span>({selectedPlayers.length})</span></button>
         </div>
       </div>
       {Available ?
@@ -32,9 +42,11 @@ function App() {
           <AvailablePlayers
             abailableBalance={abailableBalance}
             setAvailableBalance={setAvailableBalance}
+            selectedPlayers={selectedPlayers}
+            setSelectedPlayers={setSelectedPlayers}
             playersPromise={playersPromise} />
         </Suspense> :
-        <SelectedPlayers />
+        <SelectedPlayers selectedPlayers={selectedPlayers} removePlayer={removePlayer} />
       }
     </>
   )

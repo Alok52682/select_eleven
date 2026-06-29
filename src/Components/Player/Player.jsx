@@ -2,7 +2,7 @@ import userImg from '../../assets/user.png';
 import report from '../../assets/report.png';
 import { useState } from 'react';
 
-const Player = ({ player, abailableBalance, setAvailableBalance }) => {
+const Player = ({ player, abailableBalance, setAvailableBalance, selectedPlayers, setSelectedPlayers }) => {
 
     const [isSelected, setSelected] = useState(false)
 
@@ -12,8 +12,13 @@ const Player = ({ player, abailableBalance, setAvailableBalance }) => {
         if (abailableBalance < parseInt(player.price)) {
             alert('Not enough Coin')
         }
+        else if (selectedPlayers.length >= 6) {
+            alert('You already selected maximum number of players!!')
+        }
         else {
             const remainingBalance = abailableBalance - parseInt(player.price)
+            const sPlayers = [...selectedPlayers, player]
+            setSelectedPlayers(sPlayers)
             setAvailableBalance(remainingBalance)
             setSelected(true)
         }

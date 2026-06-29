@@ -1,8 +1,14 @@
+import SPlayerCard from "./SPlayerCard";
 
-const SelectedPlayers = () => {
+const SelectedPlayers = ({ selectedPlayers, removePlayer }) => {
     return (
-        <div className="max-w-[1200px] mx-auto">
-            <h2>selected players</h2>
+        <div className="max-w-300 mx-auto">
+            {
+                selectedPlayers?.map(player => <SPlayerCard
+                    key={player.id}
+                    removePlayer={removePlayer}
+                    player={player} />)
+            }
         </div>
     );
 };
