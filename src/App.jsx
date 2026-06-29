@@ -10,16 +10,17 @@ const fetchPlayers = async () => {
   return res.json()
 }
 
+const playersPromise = fetchPlayers()
 
 function App() {
   const [Available, setAvailable] = useState(true);
+  const [abailableBalance, setAvailableBalance] = useState(6000000000);
 
-  const playersPromise = fetchPlayers()
 
   return (
     <>
-      <Navbar />
-      <div className='max-w-[1200px] mx-auto flex justify-between items-center'>
+      <Navbar abailableBalance={abailableBalance} />
+      <div className='max-w-300 mx-auto flex justify-between items-center'>
         <h1 className='font-bold'>{Available ? 'Available Players' : 'Selected Players'}</h1>
         <div>
           <button onClick={() => setAvailable(true)} className={`py-3 px-4 border border-gray-400 rounded-l-xl md:w-30 border-r-0 ${Available && 'bg-amber-300'}`}>Available</button>
@@ -28,7 +29,10 @@ function App() {
       </div>
       {Available ?
         <Suspense fallback={<span className="loading loading-spinner loading-md"></span>}>
-          <AvailablePlayers playersPromise={playersPromise} />
+          <AvailablePlayers
+            abailableBalance={abailableBalance}
+            setAvailableBalance={setAvailableBalance}
+            playersPromise={playersPromise} />
         </Suspense> :
         <SelectedPlayers />
       }

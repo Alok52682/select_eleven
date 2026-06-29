@@ -1,13 +1,29 @@
 import userImg from '../../assets/user.png';
 import report from '../../assets/report.png';
+import { useState } from 'react';
 
-const Player = ({ player }) => {
-    const { player_img, player_name, player_country, playing_role, rating, price } = player
+const Player = ({ player, abailableBalance, setAvailableBalance }) => {
+
+    const [isSelected, setSelected] = useState(false)
+
+    const { player_img, player_name, player_country, playing_role, rating, price } = player;
+
+    const handleSelected = (player) => {
+        if (abailableBalance < parseInt(player.price)) {
+            alert('Not enough Coin')
+        }
+        else {
+            const remainingBalance = abailableBalance - parseInt(player.price)
+            setAvailableBalance(remainingBalance)
+            setSelected(true)
+        }
+    }
+
     return (
-        <div className="card bg-base-100 shadow-sm p-6 shadow-lg">
+        <div className="card bg-base-100 p-6 shadow-lg">
             <figure className="">
                 <img
-                    className='rounded-lg w-full h-[250px] object-cover'
+                    className='rounded-lg w-full h-62.5 object-cover'
                     src={player_img}
                     alt="player image" />
             </figure>
@@ -33,7 +49,7 @@ const Player = ({ player }) => {
                 </div>
                 <div className="card-actions flex items-center justify-between">
                     <p>Price: ${price}</p>
-                    <button className="btn">Choose player</button>
+                    <button disabled={isSelected && true} onClick={() => handleSelected(player)} className="btn">{isSelected ? 'Selected' : 'Choose player'}</button>
                 </div>
             </div>
         </div>
