@@ -1,6 +1,7 @@
 import userImg from '../../assets/user.png';
 import report from '../../assets/report.png';
 import { useState } from 'react';
+import { toast } from 'react-toastify';
 
 const Player = ({ player, abailableBalance, setAvailableBalance, selectedPlayers, setSelectedPlayers }) => {
 
@@ -10,10 +11,10 @@ const Player = ({ player, abailableBalance, setAvailableBalance, selectedPlayers
 
     const handleSelected = (player) => {
         if (abailableBalance < parseInt(player.price)) {
-            alert('Not enough Coin')
+            toast('Not enough Coin')
         }
         else if (selectedPlayers.length >= 6) {
-            alert('You already selected maximum number of players!!')
+            toast('You already selected maximum number of players!!')
         }
         else {
             const remainingBalance = abailableBalance - parseInt(player.price)

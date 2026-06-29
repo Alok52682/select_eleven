@@ -3,6 +3,7 @@ import './App.css'
 import AvailablePlayers from './Components/AvailablePlayers/AvailablePlayers'
 import Navbar from './Components/Navbar/Navbar'
 import SelectedPlayers from './Components/SelectedPlayers/SelectedPlayers'
+import { toast } from 'react-toastify'
 
 
 const fetchPlayers = async () => {
@@ -24,6 +25,7 @@ function App() {
     const remainingPlayers = selectedPlayers.filter(ply => ply.id !== p.id)
     setSelectedPlayers(remainingPlayers);
     setAvailableBalance(totalBal)
+    toast('Player Removed!')
   }
 
 
