@@ -15,13 +15,13 @@ const playersPromise = fetchPlayers()
 
 function App() {
   const [Available, setAvailable] = useState(true);
-  const [abailableBalance, setAvailableBalance] = useState(6000000000);
+  const [availableBalance, setAvailableBalance] = useState(6000000000);
   const [selectedPlayers, setSelectedPlayers] = useState([]);
 
   // console.log(selectedPlayers)
 
   const removePlayer = (p) => {
-    const totalBal = abailableBalance + p.price;
+    const totalBal = availableBalance + p.price;
     const remainingPlayers = selectedPlayers.filter(ply => ply.id !== p.id)
     setSelectedPlayers(remainingPlayers);
     setAvailableBalance(totalBal)
@@ -31,7 +31,7 @@ function App() {
 
   return (
     <>
-      <Navbar abailableBalance={abailableBalance} />
+      <Navbar availableBalance={availableBalance} />
       <div className='max-w-300 mx-auto flex justify-between items-center'>
         <h1 className='text-2xl font-bold'>{Available ? 'Available Players' : `Selected Players ${selectedPlayers.length}/6`}</h1>
         <div>
@@ -42,7 +42,7 @@ function App() {
       {Available ?
         <Suspense fallback={<span className="loading loading-spinner loading-md"></span>}>
           <AvailablePlayers
-            abailableBalance={abailableBalance}
+            availableBalance={availableBalance}
             setAvailableBalance={setAvailableBalance}
             selectedPlayers={selectedPlayers}
             setSelectedPlayers={setSelectedPlayers}

@@ -1,16 +1,17 @@
 import { use } from "react";
-import Player from "../player/player";
+import PlayerCard from "../Player/PlayerCard";
 
-const AvailablePlayers = ({ playersPromise, abailableBalance, setAvailableBalance, selectedPlayers, setSelectedPlayers }) => {
+const AvailablePlayers = ({ playersPromise, availableBalance, setAvailableBalance, selectedPlayers, setSelectedPlayers }) => {
 
     const players = use(playersPromise)
     return (
         <div className="max-w-300 mx-auto">
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {
-                    players?.map(player => <Player
+                    players?.map(player => <PlayerCard
                         key={player.id}
-                        abailableBalance={abailableBalance}
+                        availableBalance={availableBalance}
                         setAvailableBalance={setAvailableBalance}
                         selectedPlayers={selectedPlayers}
                         setSelectedPlayers={setSelectedPlayers}
